@@ -78,7 +78,8 @@
       "json",
       "web.jsx",
       "jsx",
-      "node"
+      "node",
+      "less"
     ]
   },
   "babel": {
@@ -88,5 +89,9 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5"
   }
 }
