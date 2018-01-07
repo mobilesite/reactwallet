@@ -8,8 +8,8 @@
 .ej-page__content--has-topnav{
     padding-top: @ej-height-topnav;
 }
-.ej-page__content--has-footernav{
-    padding-bottom: @ej-height-footernav;
+.ej-page__content--has-routerbar{
+    padding-bottom: @ej-height-routerbar;
 }
 
 .ej-page__content__title{
@@ -47,17 +47,6 @@
 .ej-btn--plain{
     color: @ej-color-btn-plain-font;
     background-color: @ej-color-btn-plain-bg;
-}
-.theme-wallet{
-    .ej-btn--primary{
-        .mixin-gradient-short(@ej-color-btn-primary-bg-start-wallet, @ej-color-btn-primary-bg-end-wallet);
-    }
-    .ej-btn--plain{
-        color: @ej-color-btn-plain-font-wallet;
-    }
-    .ej-modal__btn{
-        color: darken(@ej-color-primary-wallet, 10%);
-    }
 }
 
 //form
@@ -224,22 +213,6 @@
 }
 .slide-right-leave{
     transform: translate3D(-100%, 0, 0);
-}
-
-
-//主题
-.theme-wallet {
-    .icon-phone:before {
-        color: @ej-color-primary-wallet;
-    }
-
-    .ej-footernav__menu-item{
-        color: @ej-color-text-light;
-    
-        &.active {
-            color: @ej-color-primary-wallet;
-        }
-    }
 }
 
 @import './components/button/index';
