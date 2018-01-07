@@ -58,6 +58,89 @@ npm i babel-preset-env babel-preset-stage-2 babel-plugin-import -D
 },
 ```
 
+### 添加对typescript的支持
+
+npm i classnames --save
+npm i typescript ts-loader -D
+
+在./config/webpack.config.dev.js中添加：
+
+```
+{
+    test: /\.(tsx)$/,
+    include: paths.appSrc,
+    use: [
+        {
+            loader: require.resolve('babel-loader'),
+            options: {
+                // This is a feature of `babel-loader` for webpack (not Babel itself).
+                // It enables caching results in ./node_modules/.cache/babel-loader/
+                // directory for faster rebuilds.
+                cacheDirectory: true,
+            },
+        },
+        {
+            loader: require.resolve('ts-loader'),
+        }
+    ]
+},
+```
+
+在./config/webpack.config.prod.js中添加：
+
+```
+{
+    test: /\.(tsx)$/,
+    include: paths.appSrc,
+    use: [
+        {
+            loader: require.resolve('babel-loader'),
+            options: {
+                compact: true,
+            }
+        },
+        {
+            loader: require.resolve('ts-loader'),
+        }
+    ],
+},
+```
+
+在根目录下添加tsconfig.json，内容如下：
+
+```
+{
+    "compilerOptions": {
+        "strictNullChecks": true,
+        "moduleResolution": "node",
+        "jsx": "preserve",
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "es6",
+        "types": [
+            "classnames", 
+            "react", 
+            "react-dom", 
+            "react-native"
+        ]
+    },
+    "exclude": [
+        "node_modules", 
+        "lib",
+        "es"
+    ],
+    "compileOnSave": false
+}
+```
+
+安装上面配置到的一些types：
+
+```bash
+npm i @types/classnames  @types/react @types/react-dom @types/react-native --save
+```
+
+
 
 
 
