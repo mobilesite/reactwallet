@@ -3,21 +3,24 @@ import logo from './logo.svg';
 import './App.less';
 import Button from './components/button';
 import Icon from './components/icon';
+import Navbar from './components/navbar';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+        <Navbar
+          mode="light"
+          icon={<Icon type="left" />}
+          onLeftClick={() => console.log('onLeftClick')}
+          rightContent={[
+            <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
+            <Icon key="1" type="ellipsis" />,
+          ]}
+        >NavBar</Navbar>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-          <br/>
           <Button type="ghost" size="small">small</Button>
           <Icon type="qrcode"></Icon>
-          <a className="ej-btn--primary">111</a>
         </p>
       </div>
     );
