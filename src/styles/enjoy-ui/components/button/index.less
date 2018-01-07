@@ -1,0 +1,127 @@
+@import "../../main.less";
+
+// button
+@ej-height-btn: 47px;
+@ej-height-button-sm: 30px;
+
+@ej-fill-button-primary: @ej-color-primary;
+@ej-fill-button-primary-tap: @ej-color-primary-tap;
+@ej-fill-button-ghost-tap: fade(@ej-color-primary, 60%);
+@ej-fill-button-warning: #e94f4f;
+@ej-fill-button-warning-tap: #d24747;
+@ej-fill-button-link-tap: #ddd;
+
+@ej-color-button-ghost: @ej-color-primary;    // 同时应用于背景、文字颜色、边框色
+
+@ej-font-size-button: 18px;
+@ej-font-size-button-sm: 13px;
+@ej-font-size-button-link: 16px;
+
+@buttonPrefixCls: ej-button;
+
+.@{buttonPrefixCls} {
+  // do not use width:100%, can not set margin
+  display: block;
+  outline: 0 none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  padding: 0;
+  text-align: center;
+  font-size: @ej-font-size-button;
+  height: @ej-height-btn;
+  line-height: @ej-height-btn;
+
+//   overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  white-space: nowrap;
+
+  // default
+  color: @ej-color-text-base;
+  background-color: @ej-fill-base;
+
+  .mixin-hairline('all', @ej-color-border-base, @ej-radius-md);
+
+  // Multiple buttons inline arranged, the last one border-right may not display
+  &--borderfix {
+    &:before {
+      transform: scale(0.49)!important;
+    }
+  }
+
+  &&--active {
+    background-color: @ej-fill-tap;
+  }
+  &&--disabled {
+    color: fade(@ej-color-text-base, 30%);
+    opacity: 0.6;
+  }
+
+  &--primary {
+    color: @ej-color-text-base-inverse;
+    background-color: @ej-fill-button-primary;
+    .mixin-hairline('all', @ej-fill-button-primary, @ej-radius-md);
+
+    &.@{buttonPrefixCls}-active {
+      color: fade(@ej-color-text-base-inverse, 30%);
+      background-color: @ej-fill-button-primary-tap;
+    }
+    &.@{buttonPrefixCls}-disabled {
+      color: fade(@ej-color-text-base-inverse, 60%);
+      opacity: 0.4;
+    }
+  }
+
+  &--ghost {
+    color: @ej-color-button-ghost;
+    background-color: transparent;
+    .mixin-hairline('all', @ej-color-button-ghost, @ej-radius-md);
+
+    &.@{buttonPrefixCls}-active {
+      color: @ej-fill-button-ghost-tap;
+      background-color: transparent;
+      .mixin-hairline('all', @ej-fill-button-ghost-tap, @ej-radius-md);
+    }
+    &.@{buttonPrefixCls}-disabled {
+      color: fade(@ej-color-text-base, 10%);
+      .mixin-hairline('all', fade(@ej-color-text-base, 10%), @ej-radius-md);
+      opacity: 1; // override default opacity: 0.6
+    }
+  }
+
+  &--warning {
+    color: @ej-color-text-base-inverse;
+    background-color: @ej-fill-button-warning;
+
+    &.@{buttonPrefixCls}-active {
+      color: fade(@ej-color-text-base-inverse, 30%);
+      background-color: @ej-fill-button-warning-tap;
+    }
+    &.@{buttonPrefixCls}-disabled {
+      color: fade(@ej-color-text-base-inverse, 60%);
+      opacity: 0.4;
+    }
+  }
+
+  &--inline {
+    display: inline-block;
+    padding: 0 @ej-spacing-h-lg;
+  }
+
+  &--small {
+    font-size: @ej-font-size-button-sm;
+    height: @ej-height-button-sm;
+    line-height: @ej-height-button-sm;
+    padding: 0 @ej-spacing-h-lg;
+  }
+
+  &--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  > .@{buttonPrefixCls}__icon {
+    margin-right: 0.5em;
+  }
+}

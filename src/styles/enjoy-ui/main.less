@@ -18,21 +18,6 @@
     font-size: 30px;
 }
 
-//icon
-.ej-icon--logo{
-    position: absolute;
-    left: 0;
-    top: 25px;
-    width: 159px;
-    height: 47px;
-    background: url("../../assets/icons/icon-logo.png") center center no-repeat;
-    background-size: 100% 100%;
-}
-
-.ej-icon{
-    fill: currentColor;
-}
-
 //btn
 .ej-btn--primary, .ej-btn--plain{
     .mixin-user-select();
@@ -83,7 +68,7 @@
     position: relative;
     text-align: left;
     &:after{
-        .mixin-hairline-bottom();
+        .mixin-hairline('bottom');
     }
 }
 .ej-form__label, .ej-form__input{
@@ -97,10 +82,10 @@
 .ej-form__label-name{
     display: block;
     margin-bottom: 8px;
-    font-size: @ej-fontsize-form-label;
+    font-size: @ej-font-size-form-label;
 }
 .ej-form__input{
-    font-size: @ej-fontsize-form-input;
+    font-size: @ej-font-size-form-input;
     color: @ej-color-text-gray;
 }
 .ej-form__input-half{
@@ -150,7 +135,7 @@
     font-size: 17px;
     &:after{
         content: '';
-        .mixin-hairline-top();
+        .mixin-hairline('top');
     }
 }
 .ej-modal__btn{
@@ -160,7 +145,7 @@
     text-align: center;
     &:before{
         content: '';
-        .mixin-hairline-left();
+        .mixin-hairline('left');
     }
 
     &:first-child{
@@ -255,8 +240,7 @@
             color: @ej-color-primary-wallet;
         }
     }
-
-    .ej-icon--logo{
-        background-image: url("../../assets/icons/test-icon-logo.png");
-    }
 }
+
+@import './components/button/index';
+@import './components/icon/index';

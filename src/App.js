@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Button } from 'antd-mobile';
 import logo from './logo.svg';
 import './App.less';
+import Button from './components/button';
 import Icon from './components/icon';
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
           <br/>
-          <Button type="ghost" size="small" inline>small</Button>
+          <Button type="ghost" size="small">small</Button>
           <Icon type="qrcode"></Icon>
           <a className="ej-btn--primary">111</a>
         </p>
