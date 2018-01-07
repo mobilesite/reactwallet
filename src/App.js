@@ -15,6 +15,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
           <br/>
           <Button type="ghost" size="small" inline>small</Button>
+          <a className="ej-btn--primary">111</a>
         </p>
       </div>
     );

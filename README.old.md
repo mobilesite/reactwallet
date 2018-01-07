@@ -20,6 +20,8 @@ npm i less less-loader -D
 
 ### 添加对antd-mobile的支持：
 
+这里，需要改造对于babel-loader的配置，以适应对于antd-mobile的支持。
+
 ```bash
 npm i antd-mobile --save
 npm i babel-preset-env babel-preset-stage-2 babel-plugin-import -D
@@ -55,6 +57,8 @@ npm i babel-preset-env babel-preset-stage-2 babel-plugin-import -D
     ]
 },
 ```
+
+
 
 
 
