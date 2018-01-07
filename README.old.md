@@ -140,6 +140,32 @@ npm i typescript ts-loader -D
 npm i @types/classnames  @types/react @types/react-dom @types/react-native --save
 ```
 
+### 添加路由
+
+npm i redux react-redux react-router react-router-dom history redux-saga react-router-redux redux-persist --save
+
+redux-persist从4到5有较大变化，我们这里使用的是4，使用5的话会报错。这些模块的版本最好都保持跟原来的一样，不要去改它，以防因为版本不同而出错。
+
+
+index.js中配置
+
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { Route } from 'react-router';
+import { Link, BrowserRouter, HashRouter } from 'react-router-dom';
+import store from './store';
+import './index.less';
+import App from './App';
+
+
+render(
+    <Provider store={store}>
+        <App/>
+    </Provider>, 
+    document.getElementById('__APP_RENDER_NODE__')
+);
+
 
 
 

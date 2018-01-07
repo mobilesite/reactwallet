@@ -1,0 +1,58 @@
+@import "../../enjoy-ui/main.less";
+
+.ej-routerbar{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+
+    display: flex;
+    align-items: center;
+    height: @ej-height-routerbar;
+    background-color: @ej-fill-routerbar;
+    box-shadow: @ej-shadow-routerbar;
+    font-size: 11px;
+    color: @ej-color-text-gray;
+    
+    &:after{
+        .mixin-hairline('top', #D1DCFC);
+    }
+}
+.ej-routerbar__item{
+    position: relative;
+    flex: 1;
+    cursor: pointer;
+    .mixin-set-tap-color();
+    height: @ej-height-routerbar;
+
+    &--active{
+        .ej-routerbar__item-title, .ej-routerbar__item-icon{
+            color: @ej-color-primary;
+        }
+    }
+
+    &:first-child{
+        padding-left: 4.4%;
+    }
+    &:last-child{
+        padding-right: 4.4%;
+    }
+}
+
+.ej-routerbar__item-icon{
+    margin: 7px auto 0;
+    width: 22px;
+    height: 22px;
+    display: block;
+    color: #E6DCDC;
+}
+
+.ej-routerbar__item-title{
+    margin-top: 5px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    color: @ej-color-text-light;
+}
